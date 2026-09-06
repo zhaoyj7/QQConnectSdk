@@ -1,7 +1,7 @@
 {
-    "name": "zhaoyj/QQConnectSdk",
+    "name": "zhaoyj/qq-connect-sdk",
     "description": "A simple SDK for connecting to QQ",
-    "license": "CC0-1.0",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "zhaoyj",
