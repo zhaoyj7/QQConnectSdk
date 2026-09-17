@@ -181,7 +181,10 @@ class QQConnect
         $response = curl_exec($ch);
         $errno = curl_errno($ch);
         $error = curl_error($ch);
-        curl_close($ch);
+        // curl_close() has had no effect since PHP 8.0 and is deprecated as of PHP 8.5.
+        // Frameworks that promote deprecations to exceptions (e.g. ThinkPHP's error
+        // handler, which forces error_reporting(E_ALL)) turn this call into a fatal
+        // error, so the handle is left to the garbage collector.
 
         if ($errno) {
             throw new QQConnectException("HTTP请求失败: {$error}", $errno);
